@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# -b 0.0.0.0: damit der Server auch aus Docker/Codespaces erreichbar ist
+exec bin/rails server -b 0.0.0.0 -p "${PORT:-3000}"

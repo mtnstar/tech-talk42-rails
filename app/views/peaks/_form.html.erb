@@ -1,0 +1,20 @@
+<%= form_with(model: peak) do |form| %>
+  <% if peak.errors.any? %>
+    <div class="errors">
+      <h2><%= pluralize(peak.errors.count, "Fehler") %> verhindert das Speichern:</h2>
+      <ul>
+        <% peak.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :altitude, "Höhe (m ü. M.)" %>
+  <%= form.number_field :altitude %>
+
+  <%= form.submit %>
+<% end %>

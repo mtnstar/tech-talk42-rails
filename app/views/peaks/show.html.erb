@@ -1,0 +1,7 @@
+<%= render @peak %>
+
+<div class="actions">
+  <%= link_to "Bearbeiten", edit_peak_path(@peak), role: "button" %>
+  <%= button_to "Löschen", @peak, method: :delete, class: "danger" %>
+  <%= link_to "Zurück", peaks_path %>
+</div>

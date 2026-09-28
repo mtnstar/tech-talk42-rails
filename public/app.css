@@ -1,0 +1,72 @@
+/* Präsentations-Styling über Pico CSS: grosse Schrift, starker Kontrast, Berg-Farben */
+:root {
+  --pico-font-size: 150%;
+  --pico-primary: #1f6f8b;
+  --pico-primary-background: #1f6f8b;
+  --pico-primary-border: #1f6f8b;
+  --pico-primary-hover: #164f63;
+  --pico-primary-hover-background: #164f63;
+  --pico-primary-hover-border: #164f63;
+  --pico-primary-underline: rgba(31, 111, 139, 0.5);
+  --pico-color: #1b2733;
+  --summit: #e07a1f;
+}
+
+body > header {
+  background: linear-gradient(135deg, #1f6f8b 0%, #2c3e50 100%);
+  /* Pico setzt das seitliche Padding ab 576px auf 0 – hier bewusst wieder rein */
+  padding: 1.25rem 2rem;
+  margin-block: 1rem 2rem;
+  border-radius: var(--pico-border-radius);
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.6em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-decoration: none;
+}
+.brand:hover, .brand:focus { color: #fff; text-decoration: none; }
+
+h1 { font-size: 2.4em; margin-bottom: 1.5rem; }
+
+/* Gipfel als Karten */
+#peaks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.peak { margin: 0; border-top: 0.4rem solid var(--summit); }
+.peak h2 { margin-bottom: 0.5rem; }
+.peak .altitude { font-size: 1.8em; font-weight: 700; color: var(--pico-primary); margin: 0; }
+.peak footer { margin-top: 1rem; }
+
+/* Meldungen */
+.notice {
+  background: #e3f4e8;
+  border-left: 0.4rem solid #2e8b57;
+  color: #1d5c39;
+  padding: 0.75rem 1rem;
+  border-radius: var(--pico-border-radius);
+}
+.errors {
+  background: #fdecea;
+  border-left: 0.4rem solid #c0392b;
+  color: #8e2a20;
+  padding: 0.75rem 1rem;
+  border-radius: var(--pico-border-radius);
+  margin-bottom: 1.5rem;
+}
+.errors h2 { font-size: 1em; color: inherit; margin-bottom: 0.5rem; }
+
+/* Aktionsleiste unter Formularen und Detailansicht */
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-top: 1.5rem; }
+.actions form { margin: 0; }
+.actions button, .actions [role=button] { margin: 0; }
+button.danger { background: #c0392b; border-color: #c0392b; }
+button.danger:hover { background: #962d22; border-color: #962d22; }

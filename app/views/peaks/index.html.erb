@@ -1,0 +1,11 @@
+<h1>Gipfel</h1>
+
+<div id="peaks">
+  <% @peaks.each do |peak| %>
+    <%= link_to peak, style: "text-decoration: none" do %>
+      <%= render peak %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "+ Neuer Gipfel", new_peak_path, role: "button" %>

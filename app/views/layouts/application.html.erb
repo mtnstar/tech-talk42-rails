@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gipfelbuch</title>
+    <%= csrf_meta_tags %>
+    <%# Pico CSS: klassenlos, damit die Scaffold-Views ohne Aufwand gut aussehen %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.classless.min.css">
+    <%# Eigene Anpassungen für die Präsentation (public/app.css) %>
+    <link rel="stylesheet" href="/app.css">
+  </head>
+  <body>
+    <header>
+      <%= link_to root_path, class: "brand" do %>
+        <span aria-hidden="true">🏔️</span> Gipfelbuch
+      <% end %>
+    </header>
+    <main>
+      <% if notice.present? %>
+        <p class="notice"><%= notice %></p>
+      <% end %>
+      <%= yield %>
+    </main>
+  </body>
+</html>

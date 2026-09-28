@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+require "fileutils"
+
+APP_ROOT = File.expand_path("..", __dir__)
+
+def system!(*args)
+  system(*args, exception: true)
+end
+
+FileUtils.chdir APP_ROOT do
+  puts "== 💎 Gems installieren =="
+  system("bundle check") || system!("bundle install")
+
+  puts "\n== 🗄️  Datenbank vorbereiten  =="
+  system! "bin/rails db:prepare"
+
+  puts "\n== 🧹 Logs und Temp-Files aufräumen =="
+  system! "bin/rails log:clear tmp:clear"
+
+  puts "\n✅ Bereit. Starte den Server mit: bin/dev"
+  puts "   oder die Console mit:        bin/rails console"
+end
