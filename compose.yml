@@ -1,0 +1,11 @@
+# Startet die App im Container: docker compose up → http://localhost:3000
+services:
+  web:
+    build: .
+    image: ghcr.io/mtnstar/tech-talk42-rails:latest # vorgebautes Image mit allen Gems
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    stdin_open: true # für debugger/binding.irb
+    tty: true

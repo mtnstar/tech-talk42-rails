@@ -6,11 +6,8 @@ Eine winzige Rails-App zum Mitmachen beim Tech Talk 42. Ein Model, 20 Schweizer 
 
 **Codespaces:** *Code → Codespaces → Create codespace*. Das Setup läuft automatisch.
 
-**Docker:**
-```bash
-docker run -it --rm -v "$PWD":/app -w /app -p 3000:3000 ruby:3.4 bash
-bin/setup
-```
+**Docker Compose:** `docker compose up` startet Setup und Server in einem Rutsch.
+Console: `docker compose exec web bin/rails console` · Tests: `docker compose exec web bin/rails test`
 
 **Lokal** (Ruby ≥ 3.4): `bin/setup`
 
